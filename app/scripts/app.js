@@ -4,17 +4,30 @@ define(['jquery'], function ($) {
 
 	function ShuttleSchedule() {
 		this.timerId = null;
+		this.$previousElements = $();
 	}
 
 	ShuttleSchedule.prototype.timeUpdater = function(timeDestination, frequency) {
+		var that = this;
+
 		if (this.timerId) {
 			clearTimeout(this.timerId);
 		}
 
 		this.timerId = setInterval(function() {
-			var now = new Date();
-			$(timeDestination).text(now.getHours() + ':' + now.getMinutes());
+			that.setTime(timeDestination);
 		}, frequency);
+	};
+
+	ShuttleSchedule.prototype.setTime = function(timeDestination) {
+		var now = new Date(),
+			hour = now.getHours(),
+			minutes = now.getMinutes(),
+			amPM = hour - 12 < 0 ? 'AM' : 'PM',
+			amPMHour = amPM === 'AM' ? hour : hour - 12,
+			timeString = amPMHour + ':' + minutes + ' ' + amPM;
+
+		$(timeDestination).text(timeString);
 	};
 
 	/**
@@ -74,10 +87,11 @@ define(['jquery'], function ($) {
 	};
 
 	ShuttleSchedule.prototype.applyLabelsOn = function($elements, label, style) {
-		var $label = $('<span>').text(label).addClass(style.join(' '));
+		this.$previousElements.removeClass(style.join(' '));
 		$elements.each(function() {
-			$(this).append($label);
+			$('span', this).addClass(style.join(' '));
 		});
+		this.$previousElements = $elements;
 	};
 	return ShuttleSchedule;
 });
