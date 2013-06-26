@@ -16,3 +16,11 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 .arriving::after {
 	content: " Next";
 }
+
+.schedule-container table {
+	position: absolute;
+}
+
+.invisible {
+	visibility: hidden;
+}

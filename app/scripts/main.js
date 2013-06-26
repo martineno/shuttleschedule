@@ -11,10 +11,11 @@ require.config({
 	}
 });
 
-require(['app', 'jquery', 'bootstrap'], function (app, $) {
+require(['app', 'jquery', 'bootstrap'], function (App, $) {
 	'use strict';
 	$(function() {
-		var ss = new app();
+		var ss = new App();
+		ss.setupEventHandlers();
 		ss.setTime('h1');
 		ss.timeUpdater('h1', 1000);
 

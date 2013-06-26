@@ -7,6 +7,17 @@ define(['jquery'], function ($) {
 		this.$previousElements = $();
 	}
 
+	ShuttleSchedule.prototype.setupEventHandlers = function() {
+		$('.schedule-switcher').on('click', 'li', function(e) {
+			e.preventDefault();
+			if (!$(this).hasClass('active')) {
+				$('.schedule-switcher li').removeClass('active');
+				$(this).addClass('active');
+				$('.schedule-container table').toggleClass('invisible');
+			}
+		});
+	};
+
 	ShuttleSchedule.prototype.timeUpdater = function(timeDestination, frequency) {
 		var that = this;
 

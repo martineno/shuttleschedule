@@ -18,10 +18,15 @@
     <body>
         <div class="container">
             <h1 class="text-center">&nbsp;</h1>
-            <table class="table table-striped">
+            <ul class="nav nav-tabs schedule-switcher">
+                <li class="active" data-table="bart"><a href="#">BART</a></li>
+                <li data-table="caltrain"><a href="#">Caltrain</a></li>
+            </ul>
+            <div class="schedule-container">
+            <table class="table table-striped bart">
                 <thead>
-                    <th>To Townsend</th>
-                    <th>From Townsend</ht>
+                    <th>Market -> Townsend</th>
+                    <th>Townsend -> Market</ht>
                 </thead>
                 <tbody>
                     <tr>
@@ -34,7 +39,7 @@
                     </tr>
                     <tr>
                         <td data-hour="7" data-minute="30"><span>7:30</span></td>
-                        <td data-hour-"17" data-minute="2"><span>5:02 PM</span></td>
+                        <td data-hour="17" data-minute="2"><span>5:02 PM</span></td>
                     </tr>
                     <tr>
                         <td data-hour="7" data-minute="4"><span>7:45</span></td>
@@ -77,6 +82,66 @@
                         <td data-hour="19" data-minute="32"><span>7:32 PM</span></td>
                     </tr>
                 </tbody>
+                <table class="table table-striped caltrain invisible">
+                    <thead>
+                        <th>Caltrain -> Townsend</th>
+                        <th>Townsend -> Caltrain</ht>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-hour="7"><span>7:00</span></td>
+                            <td data-hour="16"><span>4:00 PM</span></td>
+                        </tr>
+                        <tr>
+                            <td data-hour="7" data-minute="15"><span>7:15</span></td>
+                            <td data-hour="4" data-minute="32"><span>4:32 PM</span></td>
+                        </tr>
+                        <tr>
+                            <td data-hour="7" data-minute="30"><span>7:30</span></td>
+                            <td data-hour="17" data-minute="2"><span>5:02 PM</span></td>
+                        </tr>
+                        <tr>
+                            <td data-hour="7" data-minute="4"><span>7:45</span></td>
+                            <td data-hour="17" data-minute="17"><span>5:17 PM</span></td>
+                        </tr>
+                        <tr>
+                            <td data-hour="8" data-minute="0"><span>8:00</span></td>
+                            <td data-hour="17" data-minute="32"><span>5:32 PM</span></td>
+                        </tr>
+                        <tr>
+                            <td data-hour="8" data-minute="15"><span>8:15</span></td>
+                            <td data-hour="17" data-minute="45"><span>5:47 PM</span></td>
+                        </tr>
+                        <tr>
+                            <td data-hour="8" data-minute="30"><span>8:30</span></td>
+                            <td data-hour="18" data-minute="02"><span>6:02 PM</span></td>
+                        </tr>
+                        <tr>
+                            <td data-hour="8" data-minute="45"><span>8:45</span></td>
+                            <td data-hour="18" data-minute="17"><span>6:17 PM</span></td>
+                        </tr>
+                        <tr>
+                            <td data-hour="9"><span>9:00</span></td>
+                            <td data-hour="18" data-minute="32"><span>6:32 PM</span></td>
+                        </tr>
+                        <tr>
+                            <td data-hour="9" data-minute="15"><span>9:15</span></td>
+                            <td data-hour="18" data-minute="47"><span>6:47 PM</span></td>
+                        </tr>
+                        <tr>
+                            <td data-hour="9" data-minute="30"><span>9:30</span></td>
+                            <td data-hour="19" data-minute="02"><span>7:02 PM</span></td>
+                        </tr>
+                        <tr>
+                            <td data-hour="9" data-minute="45"><span>9:45</span></td>
+                            <td data-hour="19" data-minute="17"><span>7:17 PM</span></td>
+                        </tr>
+                        <tr>
+                            <td data-hour="10"><span>10:00</span></td>
+                            <td data-hour="19" data-minute="32"><span>7:32 PM</span></td>
+                        </tr>
+                    </tbody>
+                </div>
         </div>
 
         <!--[if lt IE 7]>
